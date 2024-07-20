@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIFTY Option Chain</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 7px;
+            margin-bottom: 20px;
+        }
+        .full-width-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 7px;
+        }
+        .card {
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .card-header {
+            background-color: #ccd1be;
+            border-bottom: 1px solid #ddd;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .chart-card {
+            height: 40vh;
+        }
+        .chart-card canvas {
+            height: 100% !important;
+        }
+        th, td {
+            text-align: center;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        .refresh-indicator {
+            text-align: center;
+            margin: 7px;
+        }
+        .table {
+            width: 100%;
+        }
+    </style>
+    <script>
+        setInterval(() => {
+            const now = new Date();
+            const day = now.getDay();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            
+            // Check if the current time is Monday to Friday between 9:05 AM and 4:00 PM
+            if (day >= 1 && day <= 5 && 
+                (hours > 9 || (hours === 9 && minutes >= 5)) && 
+                (hours < 16 || (hours === 16 && minutes === 0))) {
+                location.reload();
+            }
+        }, 240000); // 4 minutes in milliseconds
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">NIFTY Option</h1>
+
+        <div class="grid-container">
+            <div class="card chart-card">
+                <div class="card-header">
+                    Total Seller Money (Current Strike Price: <%= currentStrike %>)
+                </div>
+                <div class="card-body">
+                    <canvas id="totalCallCOIChart"></canvas>
+                </div>
+            </div>
+            <div class="card chart-card">
+                <div class="card-header">
+                    Total Buyer Money (Current Strike Price: <%= currentStrike %>)
+                </div>
+                <div class="card-body">
+                    <canvas id="totalPutCOIChart"></canvas>
+                </div>
+            </div>
+            <div class="card chart-card">
+                <div class="card-header">
+                    Imbalance
+                </div>
+                <div class="card-body">
+                    <canvas id="currentIPCRChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- New charts section -->
+        <div class="grid-container">
+            
+            <div class="card chart-card">
+                <div class="card-header">
+                    One Step Up Strike Price: <%= currentStrike + 50 %>
+                </div>
+                <div class="card-body">
+                    <canvas id="oneStepUpStrikeChart"></canvas>
+                </div>
+            </div>
+			<div class="card chart-card">
+                <div class="card-header">
+                    Current Strike Price : <%= currentStrike %>
+                </div>
+                <div class="card-body">
+                    <canvas id="currentStrikeChart"></canvas>
+                </div>
+            </div>
+            <div class="card chart-card">
+                <div class="card-header">
+                    One Step Down Strike Price : <%= currentStrike - 50 %>
+                </div>
+                <div class="card-body">
+                    <canvas id="oneStepDownStrikeChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- New charts section -->
+        <div class="grid-container">
+            
+            <div class="card chart-card">
+                <div class="card-header">
+                    NIFTY
+                </div>
+                <div class="card-body">
+                     <iframe src="https://chartist.in/acumen/chart.html?exch=IDX&seg=I&secid=13&sym=NIFTY%2050&src=W&expcode=0&inst=IDX&userid=Z03N06" height="280" width="99%"title="description"></iframe>
+                </div>
+            </div>
+			<div class="card chart-card">
+                <div class="card-header">
+                    BANKNIFTY
+                </div>
+                <div class="card-body">
+                     <iframe src="https://chartist.in/acumen/chart.html?exch=IDX&seg=I&secid=25&sym=NIFTYBANK&src=W&expcode=0&inst=IDX&userid=Z03N06" height="280" width="99%"title="description"></iframe>
+                </div>
+            </div>
+            <div class="card chart-card">
+                <div class="card-header">
+                    OPTION PREMIUM
+                </div>
+                <div class="card-body">
+                     <iframe src="https://chartist.in/acumen/chart.html?exch=IDX&seg=I&secid=25&sym=NIFTYBANK&src=W&expcode=0&inst=IDX&userid=Z03N06" height="280" width="99%"title="description"></iframe>
+                </div>
+            </div>
+        </div>		
+
+        <script>
+            // Data for charts
+            const imbalanceData = <%- JSON.stringify(imbalanceData) %>;
+            const marketInterpretationData = <%- JSON.stringify(records) %>;
+
+            const labels = imbalanceData.map(item => {
+                const date = new Date(item.dateTime);
+                const hours = String(date.getHours()).padStart(2, '0');
+                const minutes = String(date.getMinutes()).padStart(2, '0');
+                const seconds = String(date.getSeconds()).padStart(2, '0');
+                return `${hours}:${minutes}:${seconds}`;
+            });
+
+            // Total Call COI Chart
+            const totalCallCOIData = imbalanceData.map(item => item.totalCCOI);
+            const totalCallCOIChart = new Chart(document.getElementById('totalCallCOIChart'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Total Seller Money',
+                        data: totalCallCOIData,
+                        borderColor: 'blue',
+                        backgroundColor: 'rgba(0, 0, 255, 0.1)',
+                        fill: true
+                    }]
+					
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: false,
+                            text: 'Total Call COI'
+                        }
+                    }
+                }
+            });
+
+            // Total Put COI Chart
+            const totalPutCOIData = imbalanceData.map(item => item.totalPCOI);
+            const totalPutCOIChart = new Chart(document.getElementById('totalPutCOIChart'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Total Buyer Money',
+                        data: totalPutCOIData,
+                        borderColor: 'red',
+                        backgroundColor: 'rgba(255, 0, 0, 0.1)',
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: false,
+                            text: 'Money flow'
+                        }
+                    }
+                }
+            });
+
+            // Current IPCR Chart
+            const currentIPCRData = imbalanceData.map(item => item.currentIPCR);
+            const currentIPCRChart = new Chart(document.getElementById('currentIPCRChart'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Imbalance',
+                        data: currentIPCRData,
+                        borderColor: 'green',
+                        backgroundColor: 'rgba(1, 255, 0, 0.1)',
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: false,
+                            text: 'Current IPCR'
+                        }
+                    }
+                }
+            });
+
+            // Helper function to determine the direction value for market action
+            function getDirectionValue(direction, currentValue) {
+                if (direction === 'Up Trending Market') return currentValue + 1;
+                if (direction === 'Down Trending Market') return currentValue - 1;
+                if (direction === 'Range Bound Chance') return currentValue % 2 === 0 ? currentValue + 1 : currentValue - 1;
+                return currentValue;
+            }
+
+            // Market Interpretation Chart
+            const marketLabels = marketInterpretationData.map(record => record.strikePrice);
+            const marketActionData = [];
+            let currentValue = 0; // Initial value for the chart
+
+            marketInterpretationData.forEach(record => {
+                const directionValue = getDirectionValue(record.md, currentValue);
+                marketActionData.push(directionValue);
+                currentValue = directionValue;
+            });
+
+            // Custom logic to draw lines between points based on market direction
+            const customLineData = [];
+            for (let i = 0; i < marketActionData.length - 1; i++) {
+                if (marketInterpretationData[i].md === 'Up Trending Market') {
+                    customLineData.push({ x: i, y: marketActionData[i] });
+                    customLineData.push({ x: i + 1, y: marketActionData[i + 1] });
+                } else if (marketInterpretationData[i].md === 'Down Trending Market') {
+                    customLineData.push({ x: i + 1, y: marketActionData[i + 1] });
+                    customLineData.push({ x: i, y: marketActionData[i] });
+                } else {
+                    customLineData.push({ x: i, y: marketActionData[i] });
+                }
+            }
+
+            const marketInterpretationChart = new Chart(document.getElementById('marketInterpretationChart'), {
+                type: 'line',
+                data: {
+                    labels: marketLabels,
+                    datasets: [{
+                        label: 'Market Direction',
+                        data: marketActionData,
+                        borderColor: 'purple',
+                        backgroundColor: 'rgba(128, 0, 128, 0.1)',
+                        fill: false,
+                        stepped: 'before' // Step line chart to show discrete changes
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            suggestedMin: -3,
+                            suggestedMax: 3,
+                            ticks: {
+                                stepSize: 1,
+                                callback: value => value > 0 ? 'Up' : value < 0 ? 'Down' : 'Range'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Market Interpretation'
+                        }
+                    }
+                }
+            });
+
+            // Current Strike Price COI Chart
+        const currentStrikeCallCOIData = imbalanceData.map(item => item.currentStrikeCoiData.callCoi);
+        const currentStrikePutCOIData = imbalanceData.map(item => item.currentStrikeCoiData.putCoi);
+        const currentStrikeChart = new Chart(document.getElementById('currentStrikeChart'), {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Strike <%= currentStrike %> Call COI',
+                        data: currentStrikeCallCOIData,
+                        borderColor: 'orange',
+                        backgroundColor: 'rgba(255, 165, 0, 0.1)',
+                        fill: true
+                    },
+                    {
+                        label: 'Strike <%= currentStrike %> Put COI',
+                        data: currentStrikePutCOIData,
+                        borderColor: 'red',
+                        backgroundColor: 'rgba(255, 0, 0, 0.1)',
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: false,
+                        text: 'Current Strike Price COI'
+                    }
+                }
+            }
+        });
+
+            // One Step Up Strike Price COI Chart
+        const oneStepUpCallCOIData = imbalanceData.map(item => item.oneStepUpStrikeCoiData.callCoi);
+        const oneStepUpPutCOIData = imbalanceData.map(item => item.oneStepUpStrikeCoiData.putCoi);
+        const oneStepUpStrikeChart = new Chart(document.getElementById('oneStepUpStrikeChart'), {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Strike <%= currentStrike + 50 %> Call COI',
+                        data: oneStepUpCallCOIData,
+                        borderColor: 'brown',
+                        backgroundColor: 'rgba(165, 42, 42, 0.1)',
+                        fill: true
+                    },
+                    {
+                        label: 'Strike <%= currentStrike + 50 %> Put COI',
+                        data: oneStepUpPutCOIData,
+                        borderColor: 'green',
+                        backgroundColor: 'rgba(0, 128, 0, 0.1)',
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: false,
+                        text: 'One Step Up Strike Price COI'
+                    }
+                }
+            }
+        });
+
+             // One Step Down Strike Price COI Chart
+        const oneStepDownCallCOIData = imbalanceData.map(item => item.oneStepDownStrikeCoiData.callCoi);
+        const oneStepDownPutCOIData = imbalanceData.map(item => item.oneStepDownStrikeCoiData.putCoi);
+        const oneStepDownStrikeChart = new Chart(document.getElementById('oneStepDownStrikeChart'), {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Strike <%= currentStrike - 50 %> Call COI',
+                        data: oneStepDownCallCOIData,
+                        borderColor: 'teal',
+                        backgroundColor: 'rgba(0, 128, 128, 0.1)',
+                        fill: true
+                    },
+                    {
+                        label: 'Strike <%= currentStrike - 50 %> Put COI',
+                        data: oneStepDownPutCOIData,
+                        borderColor: 'blue',
+                        backgroundColor: 'rgba(0, 128, 128, 0.1)',
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: false,
+                            text: 'One Step Down Strike Price COI'
+                        }
+                    }
+                }
+            });
+        </script>
+
+        <div class="full-width-container">
+            <div class="card">
+                <div class="card-header">
+                    Market interpretation According to Money
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Strike Price</th>
+                                <th>Call LTP</th>
+                                <th>Put LTP</th>
+                                <th>Call OI</th>
+                                <th>Put OI</th>
+                                <th>Call COI</th>
+                                <th>Put COI</th>
+                                <th>Market Direction</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% records.forEach(record => { %>
+                                <tr style="background-color: <%= record.color %>;">
+                                    <td><%= record.strikePrice %></td>
+                                    <td><%= record.callLtp %></td>
+                                    <td><%= record.putLtp %></td>
+                                    <td><%= record.callOi %></td>
+                                    <td><%= record.putOi %></td>
+                                    <td><%= record.callCoi %></td>
+                                    <td><%= record.putCoi %></td>
+                                    <td><%= record.md %></td>
+                                    <td><%= record.action %></td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Current Market Scenario
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Date and Time</th>
+                                <th>Total Call COI</th>
+                                <th>Total Put COI</th>
+                                <th>Current IPCR</th>
+                                <th>Action</th>
+                                <th>Strike Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% imbalanceData
+                                .sort((a, b) => new Date(b.dateTime) - new Date(a.dateTime))
+                                .forEach(data => { %>
+                                <tr style="background-color: <%= data.actionColor %>;">
+                                    <td><%= data.dateTime %></td>
+                                    <td><%= data.totalCCOI %></td>
+                                    <td><%= data.totalPCOI %></td>
+                                    <td><%= data.currentIPCR %></td>
+                                    <td><%= data.action %></td>
+                                    <td><%= data.strikePrice %></td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-192099796-1');
+</script>
+        <div class="card chart-card">
+            <div class="card-header">
+                Market Interpretation According to Money (Chart)
+            </div>
+            <div class="card-body">
+                <iframe src="https://chartist.in/acumen/chart.html?exch=IDX&seg=I&secid=13&sym=NIFTY%2050&src=W&expcode=0&inst=IDX&userid=Z03N06" height="500" width="100%"title="description"></iframe>
+            </div>
+        </div>
+        
+        <div class="refresh-indicator">
+            <p>Page auto-refreshes every 4 minutes.</p>
+        </div>
+    </div>
+</body>
+</html>

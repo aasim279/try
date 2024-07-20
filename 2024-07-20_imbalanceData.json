@@ -1,0 +1,968 @@
+[
+  {
+    "dateTime": "7/18/2024, 11:41:48 PM",
+    "totalCCOI": 190896,
+    "totalPCOI": 270992,
+    "currentIPCR": "1.42",
+    "action": "Buy Call",
+    "strikePrice": 24800,
+    "actionColor": "lightgreen",
+    "currentStrikeCoiData": {
+      "callCoi": 62815,
+      "putCoi": 83339
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 9900,
+      "putCoi": 10054
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 5801,
+      "putCoi": 17065
+    }
+  },
+  {
+    "dateTime": "7/18/2024, 11:44:21 PM",
+    "totalCCOI": 190896,
+    "totalPCOI": 270992,
+    "currentIPCR": "1.42",
+    "action": "Buy Call",
+    "strikePrice": 24800,
+    "actionColor": "lightgreen",
+    "currentStrikeCoiData": {
+      "callCoi": 62815,
+      "putCoi": 83339
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 9900,
+      "putCoi": 10054
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 5801,
+      "putCoi": 17065
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 1:56:47 PM",
+    "totalCCOI": 377476,
+    "totalPCOI": 76983,
+    "currentIPCR": "0.20",
+    "action": "Buy Put",
+    "strikePrice": 24600,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 53145,
+      "putCoi": 25087
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 46750,
+      "putCoi": 13921
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 7365,
+      "putCoi": 6944
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 2:00:49 PM",
+    "totalCCOI": 377721,
+    "totalPCOI": 80994,
+    "currentIPCR": "0.21",
+    "action": "Buy Put",
+    "strikePrice": 24600,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 53635,
+      "putCoi": 27823
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 46116,
+      "putCoi": 13769
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 7360,
+      "putCoi": 6578
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 2:04:51 PM",
+    "totalCCOI": 379061,
+    "totalPCOI": 78414,
+    "currentIPCR": "0.21",
+    "action": "Buy Put",
+    "strikePrice": 24600,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 54994,
+      "putCoi": 26704
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 46750,
+      "putCoi": 13838
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 7457,
+      "putCoi": 6427
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 2:08:53 PM",
+    "totalCCOI": 384156,
+    "totalPCOI": 81618,
+    "currentIPCR": "0.21",
+    "action": "Buy Put",
+    "strikePrice": 24600,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 54214,
+      "putCoi": 25689
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 47982,
+      "putCoi": 15745
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 7772,
+      "putCoi": 6427
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 2:12:54 PM",
+    "totalCCOI": 384156,
+    "totalPCOI": 77913,
+    "currentIPCR": "0.20",
+    "action": "Buy Put",
+    "strikePrice": 24600,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 54214,
+      "putCoi": 25125
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 47982,
+      "putCoi": 14786
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 7772,
+      "putCoi": 7050
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 2:16:56 PM",
+    "totalCCOI": 369196,
+    "totalPCOI": 58255,
+    "currentIPCR": "0.16",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 11240,
+      "putCoi": 9201
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 59027,
+      "putCoi": 20234
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 22353,
+      "putCoi": 21067
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 2:20:59 PM",
+    "totalCCOI": 384855,
+    "totalPCOI": 56265,
+    "currentIPCR": "0.15",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 14524,
+      "putCoi": 9627
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 63911,
+      "putCoi": 18937
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 24855,
+      "putCoi": 22197
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 2:25:00 PM",
+    "totalCCOI": 426722,
+    "totalPCOI": 55639,
+    "currentIPCR": "0.13",
+    "action": "Buy Put",
+    "strikePrice": 24600,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 70005,
+      "putCoi": 20050
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 49481,
+      "putCoi": 10033
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 16891,
+      "putCoi": 11005
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 2:29:02 PM",
+    "totalCCOI": 398323,
+    "totalPCOI": 59064,
+    "currentIPCR": "0.15",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 16508,
+      "putCoi": 11005
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 70009,
+      "putCoi": 20050
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 27231,
+      "putCoi": 23762
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 2:33:04 PM",
+    "totalCCOI": 411650,
+    "totalPCOI": 51111,
+    "currentIPCR": "0.12",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 19009,
+      "putCoi": 11958
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 73893,
+      "putCoi": 16401
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 28939,
+      "putCoi": 24183
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 2:37:07 PM",
+    "totalCCOI": 410735,
+    "totalPCOI": 55232,
+    "currentIPCR": "0.13",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 19682,
+      "putCoi": 12617
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 72942,
+      "putCoi": 18036
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 29338,
+      "putCoi": 25269
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 2:41:08 PM",
+    "totalCCOI": 410608,
+    "totalPCOI": 57401,
+    "currentIPCR": "0.14",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 19832,
+      "putCoi": 14742
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 73789,
+      "putCoi": 18244
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 29807,
+      "putCoi": 26627
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 2:45:10 PM",
+    "totalCCOI": 411575,
+    "totalPCOI": 46546,
+    "currentIPCR": "0.11",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 21257,
+      "putCoi": 13822
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 71310,
+      "putCoi": 12944
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 33037,
+      "putCoi": 25030
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 2:49:13 PM",
+    "totalCCOI": 435060,
+    "totalPCOI": 51759,
+    "currentIPCR": "0.12",
+    "action": "Buy Put",
+    "strikePrice": 24600,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 68465,
+      "putCoi": 13362
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 49194,
+      "putCoi": 8494
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 21062,
+      "putCoi": 13715
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 2:53:15 PM",
+    "totalCCOI": 420044,
+    "totalPCOI": 37630,
+    "currentIPCR": "0.09",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 20606,
+      "putCoi": 12309
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 85150,
+      "putCoi": 11156
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 33114,
+      "putCoi": 25658
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 2:57:17 PM",
+    "totalCCOI": 416331,
+    "totalPCOI": 42930,
+    "currentIPCR": "0.10",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 20039,
+      "putCoi": 14171
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 82482,
+      "putCoi": 13373
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 34178,
+      "putCoi": 27582
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 3:01:18 PM",
+    "totalCCOI": 407466,
+    "totalPCOI": 28601,
+    "currentIPCR": "0.07",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 22394,
+      "putCoi": 13570
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 68665,
+      "putCoi": 6815
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 37477,
+      "putCoi": 28703
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 3:05:20 PM",
+    "totalCCOI": 406833,
+    "totalPCOI": 24686,
+    "currentIPCR": "0.06",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 22394,
+      "putCoi": 13427
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 69283,
+      "putCoi": 4883
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 38694,
+      "putCoi": 29567
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 3:09:22 PM",
+    "totalCCOI": 405753,
+    "totalPCOI": 21058,
+    "currentIPCR": "0.05",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 23226,
+      "putCoi": 13700
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 68287,
+      "putCoi": 4701
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 38875,
+      "putCoi": 28273
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 3:13:24 PM",
+    "totalCCOI": 336573,
+    "totalPCOI": 48102,
+    "currentIPCR": "0.14",
+    "action": "Buy Put",
+    "strikePrice": 24500,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 41114,
+      "putCoi": 22500
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 23971,
+      "putCoi": 11788
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 5748,
+      "putCoi": 7198
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 3:17:26 PM",
+    "totalCCOI": 397755,
+    "totalPCOI": -4275,
+    "currentIPCR": "-0.01",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 24164,
+      "putCoi": 11159
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 62860,
+      "putCoi": -3176
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 42319,
+      "putCoi": 24109
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 3:21:28 PM",
+    "totalCCOI": 317839,
+    "totalPCOI": 42291,
+    "currentIPCR": "0.13",
+    "action": "Buy Put",
+    "strikePrice": 24500,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 41097,
+      "putCoi": 24769
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 23292,
+      "putCoi": 9926
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 9398,
+      "putCoi": 10702
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 3:25:31 PM",
+    "totalCCOI": 285618,
+    "totalPCOI": 34125,
+    "currentIPCR": "0.12",
+    "action": "Buy Put",
+    "strikePrice": 24500,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 40614,
+      "putCoi": 27186
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 19122,
+      "putCoi": 6324
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 11104,
+      "putCoi": 13704
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 3:29:35 PM",
+    "totalCCOI": 311712,
+    "totalPCOI": -32028,
+    "currentIPCR": "-0.10",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 16602,
+      "putCoi": 5032
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 42249,
+      "putCoi": -8684
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 39539,
+      "putCoi": 27561
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 3:33:38 PM",
+    "totalCCOI": 292618,
+    "totalPCOI": -37936,
+    "currentIPCR": "-0.13",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 15535,
+      "putCoi": 4256
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 38451,
+      "putCoi": -10662
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 39352,
+      "putCoi": 25129
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 3:37:40 PM",
+    "totalCCOI": 292618,
+    "totalPCOI": -37936,
+    "currentIPCR": "-0.13",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 15535,
+      "putCoi": 4256
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 38451,
+      "putCoi": -10662
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 39352,
+      "putCoi": 25129
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 3:41:42 PM",
+    "totalCCOI": 292618,
+    "totalPCOI": -37936,
+    "currentIPCR": "-0.13",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 15535,
+      "putCoi": 4256
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 38451,
+      "putCoi": -10662
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 39352,
+      "putCoi": 25129
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 3:45:43 PM",
+    "totalCCOI": 292618,
+    "totalPCOI": -37936,
+    "currentIPCR": "-0.13",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 15535,
+      "putCoi": 4256
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 38451,
+      "putCoi": -10662
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 39352,
+      "putCoi": 25129
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 3:49:46 PM",
+    "totalCCOI": 292618,
+    "totalPCOI": -37936,
+    "currentIPCR": "-0.13",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 15535,
+      "putCoi": 4256
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 38451,
+      "putCoi": -10662
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 39352,
+      "putCoi": 25129
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 3:53:48 PM",
+    "totalCCOI": 292618,
+    "totalPCOI": -37936,
+    "currentIPCR": "-0.13",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 15535,
+      "putCoi": 4256
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 38451,
+      "putCoi": -10662
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 39352,
+      "putCoi": 25129
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 3:57:50 PM",
+    "totalCCOI": 292618,
+    "totalPCOI": -37936,
+    "currentIPCR": "-0.13",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 15535,
+      "putCoi": 4256
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 38451,
+      "putCoi": -10662
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 39352,
+      "putCoi": 25129
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 7:29:47 PM",
+    "totalCCOI": 292618,
+    "totalPCOI": -37936,
+    "currentIPCR": "-0.13",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 15535,
+      "putCoi": 4256
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 38451,
+      "putCoi": -10662
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 39352,
+      "putCoi": 25129
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 8:26:04 PM",
+    "totalCCOI": 273530,
+    "totalPCOI": -70061,
+    "currentIPCR": "-0.26",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 14461,
+      "putCoi": 3176
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 34788,
+      "putCoi": -17471
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 36508,
+      "putCoi": 19270
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 8:41:44 PM",
+    "totalCCOI": 273530,
+    "totalPCOI": -70061,
+    "currentIPCR": "-0.26",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 14461,
+      "putCoi": 3176
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 34788,
+      "putCoi": -17471
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 36508,
+      "putCoi": 19270
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 8:43:58 PM",
+    "totalCCOI": 273530,
+    "totalPCOI": -70061,
+    "currentIPCR": "-0.26",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 14461,
+      "putCoi": 3176
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 34788,
+      "putCoi": -17471
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 36508,
+      "putCoi": 19270
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 8:45:01 PM",
+    "totalCCOI": 273530,
+    "totalPCOI": -70061,
+    "currentIPCR": "-0.26",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 14461,
+      "putCoi": 3176
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 34788,
+      "putCoi": -17471
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 36508,
+      "putCoi": 19270
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 8:51:54 PM",
+    "totalCCOI": 273530,
+    "totalPCOI": -70061,
+    "currentIPCR": "-0.26",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 14461,
+      "putCoi": 3176
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 34788,
+      "putCoi": -17471
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 36508,
+      "putCoi": 19270
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 8:52:30 PM",
+    "totalCCOI": 273530,
+    "totalPCOI": -70061,
+    "currentIPCR": "-0.26",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 14461,
+      "putCoi": 3176
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 34788,
+      "putCoi": -17471
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 36508,
+      "putCoi": 19270
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 8:54:18 PM",
+    "totalCCOI": 273530,
+    "totalPCOI": -70061,
+    "currentIPCR": "-0.26",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 14461,
+      "putCoi": 3176
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 34788,
+      "putCoi": -17471
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 36508,
+      "putCoi": 19270
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 11:42:12 PM",
+    "totalCCOI": 273530,
+    "totalPCOI": -70061,
+    "currentIPCR": "-0.26",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 14461,
+      "putCoi": 3176
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 34788,
+      "putCoi": -17471
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 36508,
+      "putCoi": 19270
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 11:45:06 PM",
+    "totalCCOI": 273530,
+    "totalPCOI": -70061,
+    "currentIPCR": "-0.26",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 14461,
+      "putCoi": 3176
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 34788,
+      "putCoi": -17471
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 36508,
+      "putCoi": 19270
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 11:46:55 PM",
+    "totalCCOI": 273530,
+    "totalPCOI": -70061,
+    "currentIPCR": "-0.26",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 14461,
+      "putCoi": 3176
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 34788,
+      "putCoi": -17471
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 36508,
+      "putCoi": 19270
+    }
+  },
+  {
+    "dateTime": "7/19/2024, 11:47:51 PM",
+    "totalCCOI": 273530,
+    "totalPCOI": -70061,
+    "currentIPCR": "-0.26",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 14461,
+      "putCoi": 3176
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 34788,
+      "putCoi": -17471
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 36508,
+      "putCoi": 19270
+    }
+  },
+  {
+    "dateTime": "7/20/2024, 4:03:52 PM",
+    "totalCCOI": 273530,
+    "totalPCOI": -70061,
+    "currentIPCR": "-0.26",
+    "action": "Buy Put",
+    "strikePrice": 24550,
+    "actionColor": "lightcoral",
+    "currentStrikeCoiData": {
+      "callCoi": 14461,
+      "putCoi": 3176
+    },
+    "oneStepUpStrikeCoiData": {
+      "callCoi": 34788,
+      "putCoi": -17471
+    },
+    "oneStepDownStrikeCoiData": {
+      "callCoi": 36508,
+      "putCoi": 19270
+    }
+  }
+]
